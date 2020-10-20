@@ -1,11 +1,11 @@
 <template>
   <q-page padding>
     <div class="row">
-      <div class="col-4">
+      <div class="col-md-4 col-sm-4 col-xs-12">
         <img class="full-width" :src="character.img" alt="" srcset="" @click="alert = true" />
       </div>
 
-      <div class="col-8 q-pl-xl q-pt-xl">
+      <div class="col-md-8 col-sm-8  col-xs-12 q-pl-xl q-pt-xl">
         <div class="text-h1 text-grey-3 text-weight-thin my-font q-pb-md"> {{ character.nickname }}</div>
         <div class="text-h4 text-grey-6 text-weight-thin q-pb-md"> {{ character.name }} </div>
         <div class="text-h6 text-weight-thin" 
@@ -17,7 +17,7 @@
           </span>
 
         </div>
-        <div class="text-body1 text-grey-6 q-pt-lg">Role Played By {{ character.portrayed }}</div>
+        <div class="text-body1 text-grey-6 q-pt-lg q-pb-lg">Role Played By {{ character.portrayed }}</div>
       </div>
     </div>
 
@@ -57,12 +57,15 @@ export default {
       const character = await this.$axios.get(`${url}`);
       setTimeout(() => {
         this.$q.loading.hide();
-      }, 400);
+      }, 250);
       this.character = character.data[0];
       console.log(this.character)
 
       if(this.character.birthday === "" || this.character.birthday === null || this.character.birthday === undefined) {
           this.character.birthday = 'No Birthdate Information Available!'
+      } 
+       if(this.character.img === "" || this.character.img === null || this.character.img === undefined) {
+          alert("No Image Available")
       } 
     } catch (err) {
       this.$q.loading.hide();
