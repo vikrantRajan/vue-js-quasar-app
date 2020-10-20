@@ -3,7 +3,11 @@ const routes = [
     path: "/",
     component: () => import("layouts/search.vue"),
     children: [
-      { path: "", component: () => import("pages/Index.vue") },
+      {
+        path: "",
+        name: "home",
+        component: () => import("pages/Index.vue")
+      },
       {
         path: "/profile/:id",
         name: "profile",

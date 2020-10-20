@@ -5,7 +5,9 @@
     <q-header elevated class="row justify-center bg-dark">
       <q-toolbar class="col">
         <q-toolbar-title>
+          <router-link :to="{name: 'home'}" class="text-white heading-text">
           Breaking Bad Cast
+          </router-link>
         </q-toolbar-title>
       </q-toolbar>
 

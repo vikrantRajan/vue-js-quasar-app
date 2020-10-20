@@ -50,6 +50,10 @@ export default {
       try {
         const char = await this.$axios.get(url);
         this.character = char.data[0];
+        if (this.character === '' || this.character === null || this.character === undefined)
+        {
+          alert("No Results Found")
+        }
       } catch (err) {
         console.log(err); // Catch error
       } finally {
