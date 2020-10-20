@@ -5,7 +5,7 @@
     <q-header elevated class="row justify-center bg-dark">
       <q-toolbar class="col">
         <q-toolbar-title>
-          Breaking Bad Actors
+          Breaking Bad Cast
         </q-toolbar-title>
       </q-toolbar>
 
@@ -29,6 +29,13 @@
           :to="{name: 'profile', params: {id: 'random'}}"
           replace
           label="Random"
+        />
+
+        <q-route-tab
+          :to="{name: 'search'}"
+          replace
+          label="Search"
+          icon="search"
         />
       </q-tabs>
     </q-header>
