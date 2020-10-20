@@ -2,14 +2,18 @@
   <q-layout view="hHh Lpr fFf"> <!-- Be sure to play with the Layout demo on docs -->
 
     <!-- (Optional) The Header -->
-    <q-header elevated class="row justify-center">
+    <q-header elevated class="row justify-center bg-dark">
       <q-toolbar class="col">
         <q-toolbar-title>
-          Breaking Bad API Example
+          Breaking Bad Actors
         </q-toolbar-title>
       </q-toolbar>
 
-      <q-tabs>
+      <q-tabs 
+        inline-label
+        outside-arrows
+        mobile-arrows
+        class="text-white">
         <q-route-tab
           :to="{name: 'profile', params: {id: 1}}"
           replace

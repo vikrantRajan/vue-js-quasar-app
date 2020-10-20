@@ -1,25 +1,26 @@
 <template>
   <q-page padding>
-    <div class="column justify-center items-center">
-      <q-card class="my-card">
-        <img :src="character.img" alt="" srcset="" @click="alert = true" />
-        <q-card-section>
-          <div class="text-h6">{{ character.name }}</div>
-          <div class="text-subtitle2">{{ character.nickname }}</div>
-        </q-card-section>
-        <q-card-section>
-          <q-chip
-            v-for="occupation in character.occupation"
-            color="teal"
-            :key="occupation"
-            text-color="white"
-            icon="bookmark"
-          >
-            {{ occupation }}
-          </q-chip>
-        </q-card-section>
-      </q-card>
+    <div class="row">
+      <div class="col-4">
+        <img class="full-width" :src="character.img" alt="" srcset="" @click="alert = true" />
+      </div>
+
+      <div class="col-8 q-pl-xl q-pt-xl">
+        <div class="text-h1 text-grey-3 text-weight-thin my-font q-pb-md"> {{ character.nickname }}</div>
+        <div class="text-h4 text-grey-6 text-weight-thin q-pb-md"> {{ character.name }} </div>
+        <div class="text-h6 text-weight-thin" 
+        v-for="occupation in character.occupation"
+        :key="occupation">
+          <span class="text-red-6">
+
+           --> {{ occupation }}
+          </span>
+
+        </div>
+        <div class="text-body1 text-grey-6 q-pt-lg">Role Played By {{ character.portrayed }}</div>
+      </div>
     </div>
+
     <q-dialog v-model="alert">
       <q-card>
         <q-card-section>
@@ -33,6 +34,7 @@
         </q-card-section>
       </q-card>
     </q-dialog>
+
   </q-page>
 </template>
 
@@ -57,6 +59,7 @@ export default {
         this.$q.loading.hide();
       }, 400);
       this.character = character.data[0];
+      console.log(this.character)
 
       if(this.character.birthday === "" || this.character.birthday === null || this.character.birthday === undefined) {
           this.character.birthday = 'No Birthdate Information Available!'
@@ -73,6 +76,7 @@ export default {
       alert: false,
     };
   },
+  
 };
 </script>
 
