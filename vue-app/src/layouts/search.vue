@@ -19,24 +19,24 @@
         <q-route-tab
           :to="{name: 'profile', params: {id: 1}}"
           replace
-          label="Walter White"
+          label="Walter"
         />
         <q-route-tab
           :to="{name: 'profile', params: {id: 2}}"
           replace
-          label="Jesse Pinkman"
+          label="Jesse"
         />
 
         <q-route-tab
           :to="{name: 'profile', params: {id: 'random'}}"
           replace
-          label="Random"
+          label="?"
         />
 
         <q-route-tab
           :to="{name: 'search'}"
           replace
-          label="Search"
+          label=""
           icon="search"
         />
       </q-tabs>

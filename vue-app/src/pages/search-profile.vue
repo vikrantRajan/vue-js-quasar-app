@@ -1,5 +1,5 @@
 <template>
-  <q-page padding>
+  <q-page>
    <div class="row">
     <form @submit.prevent="pressed" class="col-12">
       <q-input 
