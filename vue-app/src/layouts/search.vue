@@ -6,7 +6,7 @@
       <q-toolbar class="col">
         <q-toolbar-title>
           <router-link :to="{name: 'home'}" class="text-white heading-text">
-          Breaking Bad Cast
+            Breaking Bad Cast
           </router-link>
         </q-toolbar-title>
       </q-toolbar>
